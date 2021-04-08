@@ -10,7 +10,7 @@ import  SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
-    
+
     var body: some View {
         NavigationView{
             VStack {
@@ -21,7 +21,7 @@ struct EmojiMemoryGameView: View {
                             self.viewModel.choose(card: card)
                     }
                     .padding(5)
-                    
+
                 }
                 .foregroundColor(viewModel.theme.color)
                 .padding()
@@ -31,7 +31,7 @@ struct EmojiMemoryGameView: View {
             .navigationBarItems(trailing: Button("New Game"){
                 self.viewModel.newGame() })
         }
-    
+
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -41,13 +41,13 @@ struct EmojiMemoryGameView: View {
 struct CardView: View {
     var card: MemoryGame<String>.Card
     let gradient: Gradient
-    
+
     var body: some View {
         GeometryReader { geometry in
             self.body(for: geometry.size)
         }
     }
-    
+
   @ViewBuilder
    private  func body(for size: CGSize) -> some View {
     if card.isFaceUp || !card.isMatched{
@@ -55,15 +55,17 @@ struct CardView: View {
             Pie(startAngel: Angle.degrees(0-90), endAngle: Angle.degrees(110-90),clockWise: true)
                 Text(card.content)
                     .font(Font.system(size: fontSize(for: size)))
+
+                    .animation(card.isMatched ? Animation.linear(duration:1).repeatForever(autoreverses: false):.default)
             }
-    
+
        .cardify(isFaceUp: card.isFaceUp)
-    
+
         }
 }
 
     // MARK: - Drawing Constants
-   
+
     private func fontSize(for size: CGSize)-> CGFloat {
         min(size.width, size.height ) * 0.7
     }
