@@ -19,7 +19,7 @@ import SwiftUI
 
 let themes: [Theme] = [ Theme(name: "Animals", emojis: ["🐶","🐭","🐼","🐻","🐨","🐯"], color: .red,accentColor: .orange)
                         ,
-                        Theme(name: "Countries", emojis: ["🇧🇷","🇨🇦","🇨🇮","🇱🇻","🇳🇵","🏴󠁧󠁢󠁳󠁣󠁴󠁿"], color: .blue,accentColor: .purple),
+                        Theme(name: "Countries", emojis: ["🇦🇽","🇨🇦","🇨🇮","🇱🇻","🇳🇵","🏴󠁧󠁢󠁳󠁣󠁴󠁿"], color: .blue,accentColor: .purple),
                         Theme(name: "Fruits", emojis: ["🍎","🍊","🍌","🍇","🍓","🥭"], color: .red,accentColor: .pink),
                         Theme(name: "Vegetables", emojis: ["🌶","🌽","🧅","🧄","🥕","🥔"], color: .pink,accentColor: .yellow),
                         Theme(name: "Faces", emojis: ["😁","🤣","😇","🥰","😍","😗"],color: .yellow,accentColor: .gray),
